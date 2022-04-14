@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrbitalHelpers", "OrbitalHelpers\OrbitalHelpers.csproj", "{C2A65DDF-A1D3-4327-B829-EA6124F6ECA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{BC0671FB-A3EB-4F7F-992A-A42326AFDC89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{BC0671FB-A3EB-4F7F-992A-A42326AFDC89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestApp", "ConsoleTestApp\ConsoleTestApp.csproj", "{3DC4804D-C951-4B92-9E90-DC3E703415F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BC0671FB-A3EB-4F7F-992A-A42326AFDC89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC0671FB-A3EB-4F7F-992A-A42326AFDC89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC0671FB-A3EB-4F7F-992A-A42326AFDC89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC4804D-C951-4B92-9E90-DC3E703415F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC4804D-C951-4B92-9E90-DC3E703415F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC4804D-C951-4B92-9E90-DC3E703415F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC4804D-C951-4B92-9E90-DC3E703415F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

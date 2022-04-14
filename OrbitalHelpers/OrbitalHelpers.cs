@@ -79,7 +79,7 @@ namespace OrbitalHelpers
         {
             using var client = new HttpClient();
             client.DefaultRequestHeaders.UserAgent.ParseAdd("PostmanRuntime/7.29.0");
-            if (AuthorizationHeaderName.Length == 0) client.DefaultRequestHeaders.Add(AuthorizationHeaderName, AuthorizationHeaderValue);
+            if (AuthorizationHeaderName.Length > 0) client.DefaultRequestHeaders.Add(AuthorizationHeaderName, AuthorizationHeaderValue);
             var response = await client.GetAsync(Url);
             OnDataRecived(new EventOfTypeT(await JsonSerializer.DeserializeAsync<T>(await response.Content.ReadAsStreamAsync()), Name));
         }
