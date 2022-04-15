@@ -4,31 +4,32 @@ on:
   push:
     branches: [ master ]
   pull_request:
-    branches: [ master ]
+    types: [closed]
+    branches:
+      - master
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 5.0.x
+        source-url: https://nuget.pkg.github.com/orbitalteapot/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.NUGET}} 
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      
-    
-    - name: Publish NuGet
-      uses: NuGet/setup-nuget@v1.0.6
-      with:
-        # NuGet API Key to configure.
-        nuget-api-key: ${{ secrets.NUGET }}
-        # Source to scope the NuGet API Key to.
-        nuget-api-key-source: https://nuget.pkg.github.com/orbitalteapot/index.json
+    - name: Build solution and generate NuGet package
+      run: |  
+        cd OrbitalHelpers
+        dotnet pack -c Release -o out  
+
+    - name: Push generated package to GitHub registry
+      run: dotnet nuget push ./OrbitalHelpers/out/*.nupkg --skip-duplicate --no-symbols true
