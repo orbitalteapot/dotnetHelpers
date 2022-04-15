@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="assets\logo.png">
+    <None Include="assets\logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
