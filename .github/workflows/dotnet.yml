@@ -26,18 +26,9 @@ jobs:
       
     
     - name: Publish NuGet
-      uses: brandedoutcast/publish-nuget@v2.5.5
+      uses: NuGet/setup-nuget@v1.0.6
       with:
-        # Filepath of the project to be packaged, relative to root of repository
-        PROJECT_FILE_PATH: https://github.com/orbitalteapot/OrbitalHelpers/tree/master/OrbitalHelpers
-        # NuGet package id, used for version detection & defaults to project name
-        PACKAGE_NAME: OrbitalHelpers
-        # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
-        VERSION_FILE_PATH: 0.0.1
-        # Regex pattern to extract version info in a capturing group
-        VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
-        # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX
-        # API key to authenticate with NuGet server
-        NUGET_KEY: ${{ secrets.NUGET }}
-        # NuGet server uri hosting the packages, defaults to https://api.nuget.org
-        NUGET_SOURCE: https://nuget.pkg.github.com/orbitalteapot/index.json
+        # NuGet API Key to configure.
+        nuget-api-key: ${{ secrets.NUGET }}
+        # Source to scope the NuGet API Key to.
+        nuget-api-key-source: https://nuget.pkg.github.com/orbitalteapot/index.json
