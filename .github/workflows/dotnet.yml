@@ -23,3 +23,12 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      
+    
+    - name: Publish NuGet
+      uses: NuGet/setup-nuget@v1.0.6
+      with:
+        # NuGet API Key to configure.
+        nuget-api-key: ${{ secrets.NUGET }}
+        # Source to scope the NuGet API Key to.
+        nuget-api-key-source: https://nuget.pkg.github.com/orbitalteapot/index.json
