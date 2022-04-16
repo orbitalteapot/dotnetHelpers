@@ -6,7 +6,7 @@
 		<NeutralLanguage>en-GB</NeutralLanguage>
 		<Description>Helper methods for configuration files, RestAPI, and general extensions</Description>
 		<PackageProjectUrl>https://github.com/orbitalteapot/OrbitalHelpers</PackageProjectUrl>
-		<PackageReadmeFile>..\README.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/orbitalteapot/OrbitalHelpers</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Version>1.0.17</Version>
