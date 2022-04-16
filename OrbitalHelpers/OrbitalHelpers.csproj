@@ -9,7 +9,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/orbitalteapot/OrbitalHelpers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>1.0.7</Version>
+    <Version>1.0.8</Version>
     <PackageIcon>logo.png</PackageIcon>
     <Authors>OrbitalTeapot</Authors>
     <PackageId>OrbitalTeapot.$(AssemblyName)</PackageId>
