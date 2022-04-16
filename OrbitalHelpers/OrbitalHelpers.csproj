@@ -10,8 +10,12 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/orbitalteapot/OrbitalHelpers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <PackageIcon>logo.png</PackageIcon>
+    <Authors>OrbitalTeapot</Authors>
+    <PackageId>OrbitalTeapot.$(AssemblyName)</PackageId>
+    <PackageLicenseFile>C:\Users\Kenneth\source\repos\OrbitalHelpers\OrbitalHelpers\License\License.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,6 +38,12 @@
     <None Include="assets\logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="License\License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
