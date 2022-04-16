@@ -4,7 +4,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <NeutralLanguage>en-GB</NeutralLanguage>
-    <Description>Helpers for your projects</Description>
+    <Description>Helper methods for configuration files, RestAPI, and general extensions</Description>
     <PackageProjectUrl>https://github.com/orbitalteapot/OrbitalHelpers</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/orbitalteapot/OrbitalHelpers</RepositoryUrl>
@@ -15,6 +15,9 @@
     <PackageId>OrbitalTeapot.$(AssemblyName)</PackageId>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <Copyright>OrbitalTeapot</Copyright>
+    <PackageTags>Rest; API; ConfigManager; Extensions</PackageTags>
+    <PackageReleaseNotes>Updated general package information</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
