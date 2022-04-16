@@ -9,7 +9,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/orbitalteapot/OrbitalHelpers</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>1.0.13</Version>
+		<Version>1.0.14</Version>
 		<PackageIcon>logo.png</PackageIcon>
 		<Authors>OrbitalTeapot</Authors>
 		<PackageId>OrbitalTeapot.$(AssemblyName)</PackageId>
@@ -22,6 +22,15 @@
 		<SignAssembly>False</SignAssembly>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <Deterministic>True</Deterministic>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -30,7 +39,6 @@
 			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 		<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
