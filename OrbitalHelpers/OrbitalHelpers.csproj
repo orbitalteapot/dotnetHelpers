@@ -9,7 +9,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/orbitalteapot/OrbitalHelpers</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>1.0.15</Version>
+		<Version>1.0.16</Version>
 		<PackageIcon>logo.png</PackageIcon>
 		<Authors>OrbitalTeapot</Authors>
 		<PackageId>OrbitalTeapot.$(AssemblyName)</PackageId>
@@ -29,6 +29,7 @@
 		<None Include="..\README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 	<ItemGroup>
