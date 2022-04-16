@@ -10,12 +10,12 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/orbitalteapot/OrbitalHelpers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <PackageIcon>logo.png</PackageIcon>
     <Authors>OrbitalTeapot</Authors>
     <PackageId>OrbitalTeapot.$(AssemblyName)</PackageId>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageLicenseFile>License.txt</PackageLicenseFile>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,14 +39,6 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="License\License.txt">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
