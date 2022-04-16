@@ -9,7 +9,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/orbitalteapot/OrbitalHelpers</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>1.0.14</Version>
+		<Version>1.0.15</Version>
 		<PackageIcon>logo.png</PackageIcon>
 		<Authors>OrbitalTeapot</Authors>
 		<PackageId>OrbitalTeapot.$(AssemblyName)</PackageId>
@@ -23,14 +23,6 @@
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <Deterministic>True</Deterministic>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <Deterministic>True</Deterministic>
 	</PropertyGroup>
 
 	<ItemGroup>
