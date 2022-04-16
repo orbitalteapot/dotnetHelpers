@@ -29,12 +29,13 @@ namespace UnitTests
             Assert.AreEqual(3, lengthString);
         }
 
-        [Test]
-        public async Task GetRadarImage()
-        {
-            var metRadarImageNorway = await GetApiData.GetMetRadarImageNorway();
-            Assert.IsNotNull(metRadarImageNorway);
-        }
+        // Unsupported on non windows platforms
+        //[Test]
+        //public async Task GetRadarImage()
+        //{
+        //    var metRadarImageNorway = await GetApiData.GetMetRadarImageNorway();
+        //    Assert.IsNotNull(metRadarImageNorway);
+        //}
 
         [Test]
         public async Task GetMetForecast()

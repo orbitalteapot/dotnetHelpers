@@ -54,7 +54,7 @@ namespace OrbitalHelpers.RestApi
         }
 
         /// <summary>
-        /// Returns radar image of norway
+        /// Returns radar image of norway, uses image class (windows only)
         /// </summary>
         /// <param name="altitude"></param>
         /// <param name="lat"></param>
