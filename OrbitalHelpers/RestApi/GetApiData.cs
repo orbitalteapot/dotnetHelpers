@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Drawing;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Timers;
 using System.Net.Http;
 using System.Text.Json;
+using OrbitalHelpers.RestApi.Models.Met;
 
 namespace OrbitalHelpers.RestApi
 {
@@ -26,6 +28,45 @@ namespace OrbitalHelpers.RestApi
             client.DefaultRequestHeaders.UserAgent.ParseAdd("PostmanRuntime/7.29.0");
             var response = await client.GetAsync(url);
             return await JsonSerializer.DeserializeAsync<T>(await response.Content.ReadAsStreamAsync()) ?? throw new InvalidOperationException();
+        }
+    }
+
+    /// <summary>
+    /// Get data from preconfigured API
+    /// </summary>
+    public static class GetApiData
+    {
+        /// <summary>
+        /// Get Weather information
+        /// </summary>
+        /// <param name="altitude"></param>
+        /// <param name="lat"></param>
+        /// <param name="lon"></param>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        public static async Task<Yr> GetMetForecast(int altitude, float lat, float lon, string url = "https://api.met.no/weatherapi/locationforecast/2.0/compact?altitude=")
+        {
+            using var client = new HttpClient();
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("PostmanRuntime/7.29.0");
+            var response = await client.GetAsync($"{url}{altitude}&lat={lat}&lon={lon}");
+            return await JsonSerializer.DeserializeAsync<Yr>(await response.Content.ReadAsStreamAsync()) ?? throw new InvalidOperationException();
+        }
+
+        /// <summary>
+        /// Returns radar image of norway
+        /// </summary>
+        /// <param name="altitude"></param>
+        /// <param name="lat"></param>
+        /// <param name="lon"></param>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public static async Task<Image> GetMetRadarImageNorway(string url = "https://api.met.no/weatherapi/radar/2.0/?area=norway&type=5level_reflectivity")
+        {
+            using var client = new HttpClient();
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("PostmanRuntime/7.29.0");
+            var response = await client.GetAsync(url);
+            return Image.FromStream(await response.Content.ReadAsStreamAsync());
         }
     }
 
