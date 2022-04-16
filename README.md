@@ -1,5 +1,12 @@
-OrbitalHelpers
+OrbitalTeapot.OrbitalHelpers
 
-NuGet Package to speed up your projects
+This NuGet Package contains the following namespaces:
 
-[![.NET](https://github.com/orbitalteapot/OrbitalHelpers/actions/workflows/dotnet.yml/badge.svg)](https://github.com/orbitalteapot/OrbitalHelpers/actions/workflows/dotnet.yml)
+- OrbitalHelpers
+	- General extensions
+- OrbitalHelpers.FileManagers
+	- ConfigManager for json files
+- OrbitalHelpers.RestApi
+	- General classes for retriving API data: GetApiData, GetApiData<T>, and GetApiDataOnInterval<T>
+- OrbitalHelpers.RestApi.Models.Met
+	- Models for Norwegian forecast API
