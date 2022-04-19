@@ -6,7 +6,7 @@
 		<NeutralLanguage>en-GB</NeutralLanguage>
 		<Description>Helper methods for configuration files, RestAPI, and general extensions</Description>
 		<PackageProjectUrl>https://github.com/orbitalteapot/OrbitalHelpers</PackageProjectUrl>
-		<PackageReadmeFile>..\README.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/orbitalteapot/OrbitalHelpers</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Version>1.0.17</Version>
@@ -18,23 +18,16 @@
 		<Copyright>OrbitalTeapot</Copyright>
 		<PackageTags>Rest; API; ConfigManager; Extensions</PackageTags>
 		<PackageReleaseNotes>Updated general package information</PackageReleaseNotes>
-		<DebugType>portable</DebugType>
-		<IncludeSymbols>true</IncludeSymbols>
-		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<DebugType>embedded</DebugType>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <Deterministic>True</Deterministic>
 	  <Optimize>True</Optimize>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <Deterministic>True</Deterministic>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="..\README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 

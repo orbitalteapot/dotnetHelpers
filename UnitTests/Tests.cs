@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OrbitalHelpers;
+using OrbitalHelpers.Observable;
 using OrbitalHelpers.RestApi;
 using OrbitalHelpers.RestApi.Models.Met;
 
@@ -68,6 +66,24 @@ namespace UnitTests
         {
             _data = e;
         }
-    }
 
+        [Test]
+        public void TestMethod1()
+        {
+            var modelTracker = new ModelTracker<int>();
+            var modelReporter = new ModelReporter<int>("MyTracker");
+            modelReporter.Subscribe(modelTracker);
+            modelReporter.OnUpdatedTracker += ModelReporter_OnUpdatedTracker;
+            var data = 5;
+            modelTracker.Update(data);
+            modelTracker.UpdateWithEvent(data);
+            modelTracker.EndTransmission();
+        }
+
+        private void ModelReporter_OnUpdatedTracker(object sender, ReporterEventArgs<int> e)
+        {
+            Console.WriteLine(e.Value);
+            Assert.IsTrue(e.Name == "MyTracker" && e.Value == 5);
+        }
+    }
 }
