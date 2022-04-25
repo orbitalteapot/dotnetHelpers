@@ -20,10 +20,6 @@
 		<PackageReleaseNotes>Updated general package information</PackageReleaseNotes>
 		<DebugType>embedded</DebugType>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <Optimize>True</Optimize>
-	</PropertyGroup>
-
 	<ItemGroup>
 		<None Include="..\README.md">
 			<Pack>True</Pack>
