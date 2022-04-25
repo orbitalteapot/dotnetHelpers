@@ -3,7 +3,7 @@ using System.Collections.Generic;
 // ReSharper disable All
 #pragma warning disable IDE1006
 
-namespace OrbitalHelpers.RestApi.Models.Met
+namespace OrbitalTeapot.RestApi.Models.Met
 {
 
     public class Geometry

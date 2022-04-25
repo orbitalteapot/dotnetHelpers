@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.IO;
 
-namespace OrbitalHelpers.FileManagers
+namespace OrbitalTeapot.FileManagers
 {
     public interface IConfigManager<T>
     {
@@ -44,11 +44,11 @@ namespace OrbitalHelpers.FileManagers
                 await openStream.DisposeAsync();
                 return result ?? throw new Exception("Unable to read configuration file");
             }
-            catch 
+            catch (Exception ex)
             {
-                throw new Exception();
+                throw new Exception(ex.Message, ex);
             }
-            
+
         }
 
         /// <summary>
@@ -65,9 +65,9 @@ namespace OrbitalHelpers.FileManagers
                 await JsonSerializer.SerializeAsync(createStream, config, new JsonSerializerOptions { WriteIndented = true });
                 await createStream.DisposeAsync();
             }
-            catch 
+            catch (Exception ex)
             {
-                throw new Exception();
+                throw new Exception(ex.Message,ex);
             }
             
         }
