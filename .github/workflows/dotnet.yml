@@ -14,7 +14,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 6.0.x
         source-url: https://nuget.pkg.github.com/orbitalteapot/index.json
       env:
         NUGET_AUTH_TOKEN: ${{secrets.NUGET}} 
@@ -30,4 +30,4 @@ jobs:
         dotnet pack -c Release -o out  
 
     - name: Push generated package to GitHub registry
-      run: dotnet nuget push ./OrbitalTeapot/out/*.nupkg --skip-duplicate --no-symbols false
+      run: dotnet nuget push ./OrbitalTeapot/out/*.nupkg --skip-duplicate --no-symbols true
