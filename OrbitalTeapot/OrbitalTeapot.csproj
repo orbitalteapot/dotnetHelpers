@@ -18,9 +18,7 @@
 		<Copyright>OrbitalTeapot</Copyright>
 		<PackageTags>Rest; API; ConfigManager; Extensions</PackageTags>
 		<PackageReleaseNotes>Updated general package information</PackageReleaseNotes>
-		<DebugType>portable</DebugType>
-		<IncludeSymbols>true</IncludeSymbols>
-		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<DebugType>embedded</DebugType>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 	  <Optimize>True</Optimize>
