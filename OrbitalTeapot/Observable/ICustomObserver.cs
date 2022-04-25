@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OrbitalHelpers.Observable
+namespace OrbitalTeapot.Observable
 {
     public interface ICustomObserver<in T> : IObserver<T>
     {

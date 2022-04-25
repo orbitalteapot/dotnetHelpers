@@ -4,21 +4,23 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<NeutralLanguage>en-GB</NeutralLanguage>
-		<Description>Helper methods for configuration files, RestAPI, and general extensions</Description>
+		<Description>Speed up your project with the growing library of methods</Description>
 		<PackageProjectUrl>https://github.com/orbitalteapot/OrbitalHelpers</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/orbitalteapot/OrbitalHelpers</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>1.0.17</Version>
+		<Version>1.0.1</Version>
 		<PackageIcon>logo.png</PackageIcon>
 		<Authors>OrbitalTeapot</Authors>
-		<PackageId>OrbitalTeapot.$(AssemblyName)</PackageId>
+		<PackageId>$(AssemblyName)</PackageId>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
 		<Copyright>OrbitalTeapot</Copyright>
 		<PackageTags>Rest; API; ConfigManager; Extensions</PackageTags>
 		<PackageReleaseNotes>Updated general package information</PackageReleaseNotes>
-		<DebugType>embedded</DebugType>
+		<DebugType>portable</DebugType>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 	  <Optimize>True</Optimize>
@@ -33,6 +35,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
 		<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
 		<PackageReference Include="System.IO" Version="4.3.0" />
 		<PackageReference Include="System.Net.Http" Version="4.3.4" />

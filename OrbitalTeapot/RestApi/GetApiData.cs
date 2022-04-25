@@ -5,15 +5,15 @@ using System.Threading;
 using System.Timers;
 using System.Net.Http;
 using System.Text.Json;
-using OrbitalHelpers.RestApi.Models.Met;
+using OrbitalTeapot.RestApi.Models.Met;
 
-namespace OrbitalHelpers.RestApi
+namespace OrbitalTeapot.RestApi
 {
     /// <summary>
     /// Get API data of type T
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public static class GetApiData<T>
+    public static class GetClassFromJson<T>
     {
         /// <summary>
         /// Returns Deserialized Json to T
@@ -22,10 +22,10 @@ namespace OrbitalHelpers.RestApi
         /// <param name="url"></param>
         /// <returns>Result of type T</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public static async Task<T> GetTypeFromJson(string url)
+        public static async Task<T> GetTypeFromJson(string url, string userAgent = "PostmanRuntime/7.29.0")
         {
             using var client = new HttpClient();
-            client.DefaultRequestHeaders.UserAgent.ParseAdd("PostmanRuntime/7.29.0");
+            client.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
             var response = await client.GetAsync(url);
             return await JsonSerializer.DeserializeAsync<T>(await response.Content.ReadAsStreamAsync()) ?? throw new InvalidOperationException();
         }
@@ -34,7 +34,7 @@ namespace OrbitalHelpers.RestApi
     /// <summary>
     /// Get data from preconfigured API
     /// </summary>
-    public static class GetApiData
+    public static class GetApiDataCollection
     {
         /// <summary>
         /// Get Weather information
@@ -74,12 +74,12 @@ namespace OrbitalHelpers.RestApi
     /// Get API data of type T with specified interval
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class GetApiDataOnInterval<T> where T : class
+    public class GetClassFromJsonInterval<T> where T : class
     {
+        private string UserAgent;
         private string Url { get; }
         private string Name { get; }
         private TimeSpan TimeSpan { get; }
-        private CancellationToken CancellationToken { get; }
         private string AuthorizationHeaderName { get; }
         private string AuthorizationHeaderValue { get; }
         private readonly System.Timers.Timer _timer = new System.Timers.Timer();
@@ -90,16 +90,15 @@ namespace OrbitalHelpers.RestApi
         /// <param name="url"></param>
         /// <param name="name"></param>
         /// <param name="timeSpan"></param>
-        /// <param name="cancellationToken"></param>
         /// <param name="authorizationHeaderName"></param>
         /// <param name="authorizationHeaderValue"></param>
         /// <exception cref="InvalidOperationException"></exception>
-        public GetApiDataOnInterval(string url, string name, TimeSpan timeSpan, CancellationToken cancellationToken = default, string authorizationHeaderName = "", string authorizationHeaderValue = "")
+        public GetClassFromJsonInterval(string url, string name, TimeSpan timeSpan, string authorizationHeaderName = "", string authorizationHeaderValue = "", string userAgent = "PostmanRuntime/7.29.0")
         {
+            UserAgent = userAgent;
             Url = url;
             Name = name;
             TimeSpan = timeSpan;
-            CancellationToken = cancellationToken;
             AuthorizationHeaderName = authorizationHeaderName;
             AuthorizationHeaderValue = authorizationHeaderValue;
         }
@@ -144,10 +143,10 @@ namespace OrbitalHelpers.RestApi
         private async void EventFromTimer(object sender, ElapsedEventArgs e)
         {
             using var client = new HttpClient();
-            client.DefaultRequestHeaders.UserAgent.ParseAdd("PostmanRuntime/7.29.0");
+            client.DefaultRequestHeaders.UserAgent.ParseAdd(UserAgent);
             if (AuthorizationHeaderName.Length > 0) client.DefaultRequestHeaders.Add(AuthorizationHeaderName, AuthorizationHeaderValue);
-            var response = await client.GetAsync(Url, CancellationToken);
-            OnDataReceived(new EventOfTypeT(await JsonSerializer.DeserializeAsync<T>(await response.Content.ReadAsStreamAsync(), cancellationToken: CancellationToken) ?? throw new InvalidOperationException(), Name));
+            var response = await client.GetAsync(Url);
+            OnDataReceived(new EventOfTypeT(await JsonSerializer.DeserializeAsync<T>(await response.Content.ReadAsStreamAsync()) ?? throw new InvalidOperationException(), Name));
         }
 
         private void OnDataReceived(EventOfTypeT e)
