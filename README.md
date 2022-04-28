@@ -18,3 +18,6 @@ This NuGet Package contains the following namespaces:
 	- Implimentation of CreatePasswordHash() and VerifyPasswordHash()
 - OrbitalTeapot.RestApi.Models.Met
 	- Rest API Models for Norwegian forecast API
+
+
+Please use look at the NUnit tests to se how to use a spesific class/method
