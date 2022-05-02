@@ -23,4 +23,4 @@ This NuGet Package contains the following namespaces:
 Please use look at the NUnit tests to se how to use a spesific class/method
 
 Contributors:
-Kenneth Torjussen
+Kenneth Torjussen (OrbitalTeapot)
