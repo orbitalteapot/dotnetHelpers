@@ -1,7 +1,5 @@
 Welcome to my profile, feedback or suggestions to the NuGet package or other projects are welcome
 
-[![.NET](https://github.com/orbitalteapot/OrbitalTeapot/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/orbitalteapot/OrbitalTeapot/actions/workflows/dotnet.yml)
-
 This NuGet Package contains the following namespaces:
 
 - OrbitalTeapot.Helpers
